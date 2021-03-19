@@ -55,7 +55,7 @@ class User extends Authenticatable
 }
 ```
 
-##### Basic operations
+#### Basic operations
 
 ```php
 $user->increaseBalance(2575);
@@ -71,7 +71,7 @@ $user->modifyBalance(3037);
 $user->balance; // 5
 ```
 
-##### Reset balance
+#### Reset balance
 
 It's also possible to reset the balance and directly setting a new value.
 
@@ -81,7 +81,7 @@ $user->resetBalance(); // 0
 $user->resetBalance(10); // 10
 ```
 
-##### Check if model has balance
+#### Check if model has balance
 
 Check if there is a positive balance or a balance greater than that provided.
 ```php
@@ -89,15 +89,7 @@ $user->hasBalance();
 $user->hasBalance(2575);
 ```
 
-##### Check if model has balance
-
-Check if there is a positive balance or a balance greater than that provided.
-```php
-$user->hasBalance();
-$user->hasBalance(2575);
-```
-
-##### Check if model has no balance
+#### Check if model has no balance
 
 Check if there is no more balance.
 ```php
