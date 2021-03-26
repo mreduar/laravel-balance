@@ -31,6 +31,16 @@ class Balance extends Model
     }
 
     /**
+     * Get the balance amount transformed to currency.
+     *
+     * @return float|int
+     */
+    public function getAmountAttribute()
+    {
+        return $this->attributes['amount'] / 100;
+    }
+
+    /**
      * Get the parent of the balance record.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo

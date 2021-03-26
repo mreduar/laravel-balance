@@ -9,7 +9,7 @@ trait HasBalance
     /**
      * Get the model's balance amount.
      *
-     * @return int
+     * @return float|int
      */
     public function getBalanceAttribute()
     {
