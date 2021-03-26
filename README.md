@@ -96,6 +96,24 @@ Check if there is no more balance.
 $user->hasNoBalance();
 ```
 
+#### Add reference and description to history
+
+It is possible to add a reference to any of the above methods by passing an array as a second parameter with the data of the referenced model and a description.
+```php
+use App\Models\Podcast;
+
+$podcast = Podcast::find(1);
+
+$user->decreaseBalance(2575, [
+    'description' => 'Purchase of a podcast.',
+    'reference' => $podcast
+]);
+
+$user->increaseBalance(2575, [
+    'description' => 'Paypal Deposit.'
+]);
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
