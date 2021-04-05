@@ -73,10 +73,10 @@ trait HasBalance
     /**
      * Check if there is a positive balance.
      *
-     * @param  int $amount
+     * @param  float $amount
      * @return bool
      */
-    public function hasBalance(int $amount = 1)
+    public function hasBalance($amount = 1)
     {
         return $this->balance > 0 && $this->balance >= $amount;
     }
