@@ -55,8 +55,8 @@ class Balance extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function reference()
+    public function referenceable()
     {
-        return $this->morphTo('referenceable');
+        return $this->morphTo();
     }
 }

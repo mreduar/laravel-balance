@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-balance` will be documented in this file
 
+## 1.2.0 - 2021-05-26
+
+- Changed name of reference to referenceable method to avoid null properties when eager loading
+
 ## 1.1.1 - 2021-05-26
 
 - Fixed reference polymorphic relationship.
