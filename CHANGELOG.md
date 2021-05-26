@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-balance` will be documented in this file
 
+## 1.1.1 - 2021-05-26
+
+- Fixed reference polymorphic relationship.
+
 ## 1.1.0 - 2021-04-05
 
 - Fixed comparison error when trying to check if the model has balance.
