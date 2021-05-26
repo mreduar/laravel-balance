@@ -57,6 +57,6 @@ class Balance extends Model
      */
     public function reference()
     {
-        return $this->morphTo();
+        return $this->morphTo('referenceable');
     }
 }
