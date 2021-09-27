@@ -17,11 +17,21 @@ trait HasBalance
     }
 
     /**
+     * Get the model's balance amount.
+     *
+     * @return int
+     */
+    public function getIntBalanceAttribute()
+    {
+        return (int) $this->balanceHistory()->sum('amount');
+    }
+
+    /**
      * Increase the balance amount.
      *
      * @param  int $amount
      * @param  array $parameters
-     * @return bool
+     * @return \MrEduar\Balance\Balance
      */
     public function increaseBalance(int $amount, array $parameters = [])
     {
@@ -33,7 +43,7 @@ trait HasBalance
      *
      * @param  int $amount
      * @param  array $parameters
-     * @return bool
+     * @return \MrEduar\Balance\Balance
      */
     public function decreaseBalance(int $amount, array $parameters = [])
     {
@@ -45,7 +55,7 @@ trait HasBalance
      *
      * @param  int $amount
      * @param  array $parameters
-     * @return bool
+     * @return \MrEduar\Balance\Balance
      */
     public function modifyBalance(int $amount, array $parameters = [])
     {
@@ -57,9 +67,9 @@ trait HasBalance
      *
      * @param  int|null $newAmount
      * @param  array $parameters
-     * @return bool
+     * @return \MrEduar\Balance\Balance
      */
-    public function resetBalance($newAmount = null, $parameters = [])
+    public function resetBalance(int $newAmount = null, $parameters = [])
     {
         $this->balanceHistory()->delete();
 
@@ -73,12 +83,12 @@ trait HasBalance
     /**
      * Check if there is a positive balance.
      *
-     * @param  float $amount
+     * @param  int $amount
      * @return bool
      */
-    public function hasBalance($amount = 1)
+    public function hasBalance(int $amount = 1)
     {
-        return $this->balance > 0 && $this->balance >= $amount;
+        return $this->balance > 0 && $this->balanceHistory()->sum('amount') >= $amount;
     }
 
     /**
@@ -96,9 +106,9 @@ trait HasBalance
      *
      * @param  int $amount
      * @param  array  $parameters
-     * @return bool
+     * @return \MrEduar\Balance\Balance
      */
-    protected function createBalanceHistory($amount, array $parameters = [])
+    protected function createBalanceHistory(int $amount, array $parameters = [])
     {
         $reference = Arr::get($parameters, 'reference');
 
@@ -115,9 +125,9 @@ trait HasBalance
     }
 
     /**
-     * Relation with Balance.
+     * Get all Balance History.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\morphMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function balanceHistory()
     {

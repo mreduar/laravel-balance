@@ -2,9 +2,13 @@
 
 All notable changes to `laravel-balance` will be documented in this file
 
+## 1.3.0 - 2021-09-27
+
+- Updated the comments of several methods and improved some methods params.
+
 ## 1.2.0 - 2021-05-26
 
-- Changed name of reference to referenceable method to avoid null properties when eager loading
+- Changed name of reference to referenceable method to avoid null properties when eager loading.
 
 ## 1.1.1 - 2021-05-26
 
