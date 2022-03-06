@@ -13,7 +13,7 @@ trait HasBalance
      */
     public function getBalanceAttribute()
     {
-        return $this->balanceHistory()->sum('amount') / 100;
+        return $this->balanceHistory->sum('amount') / 100;
     }
 
     /**
@@ -23,7 +23,7 @@ trait HasBalance
      */
     public function getIntBalanceAttribute()
     {
-        return (int) $this->balanceHistory()->sum('amount');
+        return (int) $this->balanceHistory->sum('amount');
     }
 
     /**
